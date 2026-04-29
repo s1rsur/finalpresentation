@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    		<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <title>Финансовая Математика</title>
+
+    <link rel="stylesheet" href="dist/reset.css">
+	<link rel="stylesheet" href="dist/reveal.css">
+	<link rel="stylesheet" href="dist/theme/moon.css" id="theme">
+
+    <link rel="stylesheet" href="plugin/highlight/monokai.css" id="highlight-theme">
+    <style>
+
+    </style>
+</head>
+<body>
+    <div class = "reveal">
+        <div class = "slides">
+            <section class = "center">
+                <h1>Финансовая Математика</h1>
+            </section>
+            <section class = "center">
+                <h2>Основные понятия</h2>
+            </section>
+            <section data-markdown = "markdown/finance_math.md"></section>
+            <section >
+                ### Наращивание по простым процентным ставкам
+                Наращивание - это определение будущей суммы денег, исходя из известной текущей суммы и начисленных процентов.
+                $$
+                S = P \times (1 + n \times i)
+                $$
+                Где:
+                - $ S $ - наращенная стоимость
+                - $ P $ - первоначальная стоимость
+                - $ n $ - срок опрецаий в год
+                - $ i $ - простая годовая процентная ставка 
+            </section>
+        </div>
+    </div>
+
+    	<script src="dist/reveal.js"></script>
+		<script src="plugin/notes/notes.js"></script>
+		<script src="plugin/markdown/markdown.js"></script>
+		<script src="plugin/highlight/highlight.js"></script>
+		<script>
+			Reveal.initialize({
+				hash: true,
+				slideNumber: true,
+				controls: true,
+				center: false,
+				dependencies: [{
+					src: 'plugin/katex/katex.js',
+					async: true,
+				}, {
+					src: 'plugin/fullscreen/fullscreen.js',
+				}, {
+					src: 'plugin/menu/menu.js'
+				}],
+				menu: {
+					numbers: true,
+					markers: true,
+				} ,
+				plugins: [ RevealMarkdown, RevealHighlight, RevealNotes ]
+			});
+		</script>
+</body>
+</html>
