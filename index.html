@@ -11,7 +11,24 @@
 
     <link rel="stylesheet" href="plugin/highlight/monokai.css" id="highlight-theme">
     <style>
-
+		#Page
+		{
+			font-size: 200%;
+			width: 700px;
+			height: 800px;
+			border: none;
+			text-align: center;
+		}
+		.centered_content
+		{
+			display: flex;
+			justify-content: center;
+			align-items: center;
+			top: 150px;
+			margin: 0;
+			padding: 20px;
+			transform: scale(2);
+		}
     </style>
 </head>
 <body>
@@ -25,10 +42,72 @@
             </section>
             <section data-markdown = "markdown/finance_math.md" ></section>
 			<section data-markdown="markdown/discountiong_and_build_up.md" style = "font-size:80%;"></section>
-            <section data-markdown = "markdown/build_up_simple_interest.md"></section>
-			<section data-markdown = "markdown/discounting_simple_interest.md"></section>
-			<section data-markdown="markdown/build_up_compound_interest.md"></section>
-			<section data-markdown="markdown/discounting_compound_interest.md"></section>
+			<section>
+				<section data-markdown = "markdown/build_up_simple_interest.md"></section>
+				<section data-markdown = "markdown/discounting_simple_interest.md"></section>
+			</section>
+			<section>
+				<section data-markdown="markdown/build_up_compound_interest.md"></section>
+				<section data-markdown="markdown/discounting_compound_interest.md"></section>
+			</section>
+			<section>
+				<section data-markdown="markdown/english_practice.md"></section>
+				<section data-markdown="markdown/french_practice.md"></section>
+				<section data-markdown="markdown/german_practice.md"></section>
+			</section>
+			<section class="center">
+				<h2>
+					Примеры начисления процентов
+				</h2>
+			</section>
+			<section>
+				<section data-markdown="markdown/example_eng_build_up_simp_int.md"></section>
+				<section data-markdown="markdown/example_eng_disc_simp_int.md" style="font-size: 90%;"></section>
+				<section data-markdown="markdown/example_eng_build_up_compound_int.md"></section>
+				<section data-markdown="markdown/example_eng_disc_compound_int.md"></section>
+			</section>
+			<section>
+				<section data-markdown="markdown/example_french_build_up_simple_int.md"></section>
+				<section data-markdown="markdown/example_french_disc_simple_int.md"></section>
+				<section data-markdown="markdown/example_french_build_up_compound_int.md"></section>
+				<section data-markdown="markdown/example_french_disc_compound_int.md"></section>
+			</section>
+			<section>
+				<section data-markdown="markdown/example_germ_build_up_simp_int.md"></section>
+				<section data-markdown="markdown/example_germ_disc_simp_int.md"></section>
+				<section data-markdown="markdown/example_germ_build_up_compound_int.md"></section>
+				<section data-markdown="markdown/example_germ_disc_compound_int.md"></section>
+			</section>
+			<section data-menutitle = "Таблица номеров дней года"> 
+				<iframe src="html/table.html" height="1200px" width="1500px"></iframe>
+			</section>
+			<section>
+				<section data-menutitle = "Ангийская практика для простых процентов" class="centered_content">
+					<iframe src="html/english_simple_interest.html" height="400px" width="600px"></iframe>
+				</section>
+				<section data-menutitle="Ангийская практика для сложных процентов" class = "centered_content">
+					<iframe src="html/english_compound_interest.html" height="400px" width="600px"></iframe>
+				</section>
+			</section>
+			<section>
+				<section data-menutitle="Франзуская практика для простых процентов" class="centered_content">
+					<iframe src="html/french_simple_interest.html" height="400px" width="600px"></iframe>
+				</section>
+				<section data-menutitle="Франзуская практика для сложных процентов" class="centered_content">
+					<iframe src="html/french_compound_interest.html" height="400px" width="600px"></iframe>
+				</section>
+			</section>
+			<section>
+				<section data-menutitle="Немецкая практика для простых процентов" class = "centered_content">
+					<iframe src="html/german_simple_interest.html" height="400px" width="600px"></iframe>
+				</section>
+				<section data-menutitle="Немецкая практика для сложных процентов" class = "centered_content">
+					<iframe src="html/german_compound_interest.html" height="400px" width="600px"></iframe>
+				</section>
+			</section>
+			
+			
+
         </div>
     </div>
 

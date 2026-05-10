@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Франзуская практика для сложных процентов</title>
+    <style>
+        .centered_content
+        {
+            text-align: center;
+            transform-origin: bottom;
+        }
+        html, body
+        {
+            color: antiquewhite;
+        }
+    </style>
+</head>
+
+<body>
+    <div style="text-align: center;">
+        <h1>Франзуская практика для сложных процентов</h1>
+    </div>
+    <div class="centered_content">
+        <label for="sum">Первоначальная сумма: </label>
+        <input type="text" id="sum">
+    </div>
+    <div class="centered_content">
+        <label for="interest">Процентная ставка: </label>
+        <input type="text" id = "interest">
+    </div>
+    <div class="centered_content">
+        <label for="datestart">Дата начала: </label>
+        <input type="date" id = "datestart">
+    </div>
+    <div class="centered_content">
+        <label for="datefinish">Дата конца: </label>
+        <input type="date" id = "datefinish">
+    </div>
+    <div class="centered_content">
+        <button onclick="getDate()">Получить наращенную стоимость: </button>
+        <p id="result"></p>
+    </div>
+    <script>
+        function getDate() 
+        {
+            const StartSum = document.getElementById('sum');
+            const Interest = document.getElementById('interest');
+            const dateStartInput = document.getElementById('datestart');
+            const dateFinishInput = document.getElementById('datefinish');
+            const selectStartSum = Number(StartSum.value);
+            const selectInterest = Number(Interest.value);
+            const selectStartDate = new Date(dateStartInput.value);
+            const selectFinishDate = new Date(dateFinishInput.value);
+            if (selectStartSum <=0 || selectInterest <=0 || selectStartDate >= selectFinishDate)
+            {
+                document.getElementById('result').innerHTML = "Введены некоректные данные!!! Попробуйте ещё раз"
+            }
+            else
+            {
+                document.getElementById('result').innerHTML = "Результат: " + IncreasedCost(selectStartSum, selectInterest, getDays(selectStartDate, selectFinishDate)).toFixed(2);
+            }
+        }
+        const StartDate = [selectStartDate.getDate(), selectStartDate.getMonth()+1, selectStartDate.getFullYear()];
+        const FinishDate = [selectFinishDate.getDate(), selectFinishDate.getMonth()+1,selectFinishDate.getFullYear()];
+            
+        function IncreasedCost(StartSum, Interest, Date)
+        {
+            const result = StartSum*Math.pow(1+Interest/100,Date/360);
+            return result;
+        }
+        function getDays(a, b)
+        {
+            let ms = 1000*60*60*24;
+            let result = (b-a)/ms;
+            return result;
+        }
+    </script>
+</body>
+</html>

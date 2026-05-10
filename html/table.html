@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Table</title>
+    <style>
+        .centered_content
+        {
+            text-align: center;
+        }
+        html, body, #tab
+        {
+            margin: auto;
+            padding: 0;
+            width: 100%;
+            height: 100%;
+            color: white;
+            left: 1000px;
+        }
+        table{
+            margin: auto;
+            transform: scale(0.8);
+            transform-origin: top;
+        }
+        table, td{
+            border: 1px solid slategray;
+            border-collapse: collapse;
+            padding: 3px;
+        }
+    </style>
+</head>
+<body>
+    <div class = "centered_content">
+        <h1>Таблица номеров дней года</h1> 
+    </div>
+    <div id = "tab"></div>
+    <script>
+        window.onload = () =>
+    {
+        try
+        {
+            let table = `<table>`;
+            table +=`<thead><tr>
+            <td>№</td>
+            <td>Январь</td>
+            <td>Февраль</td>
+            <td>Март</td>
+            <td>Апрель</td>
+            <td>Май</td>    
+            <td>Июнь</td>
+            <td>Июль</td>
+            <td>Август</td>
+            <td>Сентябрь</td>
+            <td>Октябрь</td>
+            <td>Ноябрь</td>
+            <td>Декабрь</td>
+            <tr></thead><tbody>`;
+            for(let i = 1;i<=28;i++)
+            {
+                table +=`<tr>
+                <td>${i}</td>
+                <td>${i}</td>
+                <td>${i+31}</td>
+                <td>${i+59}</td>
+                <td>${i+90}</td>
+                <td>${i+120}</td>
+                <td>${i+151}</td>
+                <td>${i+181}</td>
+                <td>${i+212}</td>
+                <td>${i+243}</td>
+                <td>${i+273}</td>
+                <td>${i+304}</td>
+                <td>${i+334}</td>
+                </tr>`
+            }
+            for(let i = 29;i<=30;i++)
+            {
+                table +=`<tr>
+                <td>${i}</td>
+                <td>${i}</td>
+                <td></td>
+                <td>${i+59}</td>
+                <td>${i+90}</td>
+                <td>${i+120}</td>
+                <td>${i+151}</td>
+                <td>${i+181}</td>
+                <td>${i+212}</td>
+                <td>${i+243}</td>
+                <td>${i+273}</td>
+                <td>${i+304}</td>
+                <td>${i+334}</td>
+                </tr>`
+            }
+            table +=`<tr>
+                <td>${31}</td>
+                <td>${31}</td>
+                <td></td>
+                <td>${31+59}</td>
+                <td></td>
+                <td>${31+120}</td>
+                <td></td>
+                <td>${31+181}</td>
+                <td>${31+212}</td>
+                <td></td>
+                <td>${31+273}</td>
+                <td></td>
+                <td>${31+334}</td>
+                </tr>`
+            table+=`</tbody></table>`
+            document.querySelector("#tab").innerHTML = table;
+        }
+        catch(error)
+        {
+            console.error(error);
+        }
+    }
+    </script>
+    
+</body>
+</html>
